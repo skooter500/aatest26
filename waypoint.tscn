@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cv2kqrfhhm76a"]
+
+[ext_resource type="Script" uid="uid://38vekja0lidy" path="res://waypoint.gd" id="1_3d7rh"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8uh7m"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uqi0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6uqi0"]
+height = 0.2
+radius = 0.05
+
+[node name="waypoint" type="Area3D" unique_id=17684839]
+script = ExtResource("1_3d7rh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1932300018]
+mesh = SubResource("CylinderMesh_8uh7m")
+surface_material_override/0 = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911130444]
+shape = SubResource("CylinderShape3D_6uqi0")
